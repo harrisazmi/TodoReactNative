@@ -44,13 +44,13 @@ const TodoList = () => {
         data={todos}
         renderItem={({ item }) => (
           <View style={styles.todoContainer}>
+            <Text style={styles.todoText}>{item.text}</Text>
             <TouchableOpacity
               onPress={() => handleDeleteTodo(item.key)}
               style={styles.deleteButton}
             >
               <Text style={styles.deleteButtonText}>X</Text>
             </TouchableOpacity>
-            <Text style={styles.todoText}>{item.text}</Text>
           </View>
         )}
         keyExtractor={(item) => item.key}
@@ -70,6 +70,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     marginBottom: 20,
     textAlign: "center",
+    color: "#333",
   },
   inputContainer: {
     flexDirection: "row",
@@ -91,6 +92,8 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     paddingVertical: 15,
     paddingHorizontal: 20,
+    justifyContent: "center",
+    alignItems: "center",
   },
   addButtonText: {
     color: "#fff",
@@ -103,6 +106,7 @@ const styles = StyleSheet.create({
   todoContainer: {
     flexDirection: "row",
     alignItems: "center",
+    justifyContent: "space-between",
     backgroundColor: "#fff",
     paddingVertical: 15,
     paddingHorizontal: 20,
@@ -111,19 +115,19 @@ const styles = StyleSheet.create({
     elevation: 3,
   },
   deleteButton: {
-    padding: 5,
-    borderRadius: 50,
-    backgroundColor: "#000",
-    marginRight: 10,
+    backgroundColor: "#ccc",
+    borderRadius: 10,
+    padding: 10,
   },
   deleteButtonText: {
-    color: "#fff",
+    color: "#333",
     fontSize: 16,
     fontWeight: "bold",
   },
   todoText: {
     flex: 1,
     fontSize: 16,
+    color: "#333",
   },
 });
 
